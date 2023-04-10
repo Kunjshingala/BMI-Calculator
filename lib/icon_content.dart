@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/material.dart';
 
 const lableTextStyle = TextStyle(
   fontSize: 18,
@@ -7,7 +7,7 @@ const lableTextStyle = TextStyle(
 );
 
 class IconContent extends StatelessWidget {
-  IconContent({this.icon, this.lable});
+  IconContent({required this.icon, this.lable});
 
   final IconData? icon;
   final String? lable;
@@ -15,18 +15,21 @@ class IconContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        FaIcon(
-          icon,
-          size: 80,
+        Expanded(
+          flex: 3,
+          child: Icon(
+            icon,
+            size: 70,
+            color: Colors.white,
+          ),
         ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          lable!,
-          style: lableTextStyle,
+        Expanded(
+          flex: 1,
+          child: Text(
+            lable!,
+            style: lableTextStyle,
+          ),
         ),
       ],
     );

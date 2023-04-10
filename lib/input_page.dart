@@ -45,7 +45,7 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       body: Column(
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -55,7 +55,6 @@ class _InputPageState extends State<InputPage> {
                     onTap: () {
                       setState(() {
                         updateColour(1);
-                        print('user selected');
                       });
                     },
                     child: ReusableCard(
@@ -89,6 +88,7 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
               colour: activeCardColour,
+              childCard: Container(),
             ),
           ),
           Expanded(
@@ -97,11 +97,13 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColour,
+                    childCard: Container(),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColour,
+                    childCard: Container(),
                   ),
                 )
               ],
