@@ -1,8 +1,12 @@
-import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/Screens/results_page.dart';
+import '../Components/bottom_button.dart';
+import '../Components/icon_content.dart';
+import '../Components/reusable_card.dart';
+import '../constant.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'constant.dart';
-import 'icon_content.dart';
+import '../Components/round_icon_button.dart';
 
 enum Gender {
   male,
@@ -224,36 +228,25 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColour,
-            margin: EdgeInsets.only(top: 20),
-            width: double.infinity,
-            height: kBottamContainerHeight,
-          )
+          BottomButton(
+            buttonTitle: 'Calculate',
+            onTap: () {
+              CalculatorBrain calc =
+                  CalculatorBrain(height: height, weight: weight);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(
+                    bmiResult: calc.calculateBMI(),
+                    resultText: calc.getResult(),
+                    interpretation: calc.getInterpretation(),
+                  ),
+                ),
+              );
+            },
+          ),
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({required this.icon, required this.onPressed});
-
-  final IconData icon;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
-      elevation: 0,
-      constraints: BoxConstraints.tightFor(
-        width: 56,
-        height: 56,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xff4c4f5E),
     );
   }
 }
