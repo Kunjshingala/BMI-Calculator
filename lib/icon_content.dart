@@ -1,10 +1,6 @@
+import 'package:bmi_calculator/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-const lableTextStyle = TextStyle(
-  fontSize: 18,
-  color: Color(0xff8dd698),
-);
 
 class IconContent extends StatelessWidget {
   IconContent({required this.icon, this.lable});
@@ -28,7 +24,7 @@ class IconContent extends StatelessWidget {
           flex: 1,
           child: Text(
             lable!,
-            style: lableTextStyle,
+            style: kLableTextStyle,
           ),
         ),
       ],
