@@ -2,6 +2,13 @@
 
   This Flutter project is a beautiful UI implementation based on  the design by Ruben Vaalt, available on Dribbble. You can find the original design [here](https://dribbble.com/shots/4585382-Simple-BMI-Calculator).
 
+
+- #### Clone this repository to your local machine.
+
+    ```shell
+    git clone :  https://github.com/your-username/flutter-bmi-calculator.git 
+    ```
+
 ## Overview
 
 In this project, we not only replicated the stunning design by Ruben Vaalt but also added our own custom widgets to enhance the user experience. This README will guide you through the key features of this project, as well as the Flutter concepts and techniques employed to achieve them.
